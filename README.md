@@ -1,4 +1,4 @@
-# GPU Passthrough from Arch Linux
+# GPU Passthrough from Arch Linux Modified for CentOS 8
 
 ##### Issues
 
@@ -63,7 +63,10 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 
 3. re-configure your grub:
 
-`$ sudo grub-mkconfig -o /boot/grub/grub.cfg`
+#[For Arch Linux not sure which version]`$ sudo grub-mkconfig -o /boot/grub/grub.cfg`
+For CentOS 8 it is grub2 and the actual director would be  /boot/grub2 and the grub.cfg will actually be in 
+/boot/efi/EFI/centos/grub.cfg if using UEFI (not sure for BIOS) and the utility to use is grub2-mkconfig
+`$ sudo grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg`
 
 
 4. reboot
